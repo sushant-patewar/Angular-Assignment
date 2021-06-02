@@ -1,0 +1,58 @@
+<div class="container">
+  <!-- Header -->
+  <div class="row">
+    <div class="col-md-10">
+      <h2>Profile</h2>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <br />
+
+
+  <!-- Cell 1 -->
+  <div class="col-md-6" *ngIf="loader">
+    <mat-card [style.backgroundColor]="'lightGray'">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- <div class="row"> -->
+          <!-- <div class="col-md-12"> -->
+          <mat-card-header>
+            <!-- <mat-card-title>{{project?.ProjectName}}</mat-card-title> -->
+            <mat-card-title>{{
+              userInfo.first_name + " " + userInfo.last_name
+            }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{ "Email: " + userInfo.email }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{ "Id: "+ userInfo.id }}
+              </div>
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <button mat-button>View/Edit</button>
+          </mat-card-actions>
+        </div>
+        <div class="col-md-4">
+          <img
+            src="{{ userInfo.avatar }}"
+            alt="User's Avatar"
+            width="130"
+            height="130"
+          />
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-md-6"></div>
+</div>
